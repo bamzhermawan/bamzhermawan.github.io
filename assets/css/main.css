@@ -380,9 +380,8 @@ h6 {
 
 .aquarium-loader {
   position: relative;
-  width: min(100%, 760px);
-  height: auto;
-  aspect-ratio: 800 / 500;
+  width: 600px;
+  height: 375px;
   transform-origin: center center;
   transform: scale(1);
   margin: 0 auto;
@@ -391,7 +390,7 @@ h6 {
 
 .aquarium-loader__caption {
   position: relative;
-  width: min(100%, 760px);
+  width: 600px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
@@ -417,55 +416,72 @@ h6 {
   flex-shrink: 0;
 }
 
-@media (max-width: 1200px) {
+/* Desktop */
+@media (min-width: 1200px) {
   .aquarium-loader {
-    transform: scale(0.92);
+    width: 700px;
+    height: 437px;
+    transform: scale(0.95);
   }
 }
 
-@media (max-width: 900px) {
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 769px) {
   .aquarium-loader {
-    transform: scale(0.72);
+    width: 550px;
+    height: 344px;
+    transform: scale(0.85);
   }
 
   .aquarium-loader__caption {
+    width: 550px;
     font-size: 18px;
     letter-spacing: 0.16em;
-    line-height: 1.2;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile Large */
+@media (max-width: 768px) and (min-width: 577px) {
   .aquarium-loader {
-    transform: scale(0.62);
+    width: 400px;
+    height: 250px;
+    transform: scale(0.65);
   }
 
   .aquarium-loader__caption {
+    width: 400px;
     font-size: 16px;
     letter-spacing: 0.14em;
-    line-height: 1.2;
   }
 }
 
-@media (max-width: 576px) {
+/* Mobile Medium */
+@media (max-width: 576px) and (min-width: 361px) {
   .aquarium-loader {
-    transform: scale(0.52);
+    width: 280px;
+    height: 175px;
+    transform: scale(0.46);
   }
 
   .aquarium-loader__caption {
+    width: 280px;
     font-size: 14px;
     letter-spacing: 0.12em;
-    line-height: 1.2;
   }
 }
 
-@media (max-width: 420px) {
+/* Mobile Small */
+@media (max-width: 360px) {
   .aquarium-loader {
-    transform: scale(0.45);
+    width: 240px;
+    height: 150px;
+    transform: scale(0.39);
   }
 
   .aquarium-loader__caption {
-    font-size: 13px;
+    width: 240px;
+    font-size: 12px;
+    letter-spacing: 0.10em;
   }
 }
 
