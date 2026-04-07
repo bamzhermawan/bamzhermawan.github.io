@@ -355,12 +355,18 @@ h6 {
   position: fixed;
   inset: 0;
   z-index: 999999;
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
   overflow: hidden;
   background: #ffffff;
   transition: opacity 0.7s ease, visibility 0.7s ease;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #preloader.is-hidden {
@@ -374,18 +380,22 @@ h6 {
 
 .aquarium-loader {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: min(100%, 760px);
+  height: auto;
+  aspect-ratio: 800 / 500;
   transform-origin: center center;
-  transform: translateY(-56px) scale(1.2);
+  transform: scale(1);
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .aquarium-loader__caption {
-  position: absolute;
-  left: 50%;
-  top: 398px;
-  transform: translateX(-50%);
-  white-space: nowrap;
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  white-space: normal;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
@@ -404,6 +414,59 @@ h6 {
   animation: captionCartoon 2.5s ease-in-out infinite,
     captionGlow 2.4s ease-in-out infinite,
     captionGradient 6s ease-in-out infinite alternate;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .aquarium-loader {
+    transform: scale(0.92);
+  }
+}
+
+@media (max-width: 900px) {
+  .aquarium-loader {
+    transform: scale(0.72);
+  }
+
+  .aquarium-loader__caption {
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .aquarium-loader {
+    transform: scale(0.62);
+  }
+
+  .aquarium-loader__caption {
+    font-size: 16px;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 576px) {
+  .aquarium-loader {
+    transform: scale(0.52);
+  }
+
+  .aquarium-loader__caption {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 420px) {
+  .aquarium-loader {
+    transform: scale(0.45);
+  }
+
+  .aquarium-loader__caption {
+    font-size: 13px;
+  }
 }
 
 .aquarium-loader * {
@@ -412,7 +475,7 @@ h6 {
 }
 
 .aquarium__table {
-  left: 230px;
+  left: 210px;
   top: 381px;
   width: 341px;
   height: 6px;
@@ -433,7 +496,7 @@ h6 {
 }
 
 .aquarium__aquarium {
-  left: 296px;
+  left: 276px;
   top: 223px;
   width: 209px;
   height: 148px;
@@ -456,7 +519,7 @@ h6 {
 
 .aquarium__drops {
   top: 142px;
-  left: 304px;
+  left: 284px;
   width: 190px;
   height: 125px;
   overflow: hidden;
@@ -579,7 +642,7 @@ h6 {
 .aquarium__sponge-box {
   width: 86px;
   height: 106px;
-  left: 357px;
+  left: 337px;
   top: 233px;
   animation: aqSpongeBox 2.5s linear infinite;
 }
@@ -1016,23 +1079,23 @@ h6 {
 @keyframes captionCartoon {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0) skewX(-2deg) scale(1);
+    transform: translateY(0) skewX(-2deg) scale(1);
   }
 
   12% {
-    transform: translateX(-50%) translateY(-6px) skewX(4deg) scale(1.02);
+    transform: translateY(-6px) skewX(4deg) scale(1.02);
   }
 
   25% {
-    transform: translateX(-50%) translateY(0) skewX(-3deg) scale(1.01);
+    transform: translateY(0) skewX(-3deg) scale(1.01);
   }
 
   50% {
-    transform: translateX(-50%) translateY(-8px) skewX(3deg) scale(1.04);
+    transform: translateY(-8px) skewX(3deg) scale(1.04);
   }
 
   75% {
-    transform: translateX(-50%) translateY(-2px) skewX(-2deg) scale(1.02);
+    transform: translateY(-2px) skewX(-2deg) scale(1.02);
   }
 }
 
@@ -1057,18 +1120,6 @@ h6 {
 
   50% {
     background-position: 100% 50%;
-  }
-}
-
-@media (max-width: 900px) {
-  .aquarium-loader {
-    transform: translateY(-44px) scale(0.92);
-  }
-
-  .aquarium-loader__caption {
-    top: 398px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
   }
 }
 
